@@ -3,17 +3,16 @@
 
 using namespace std;
 
-const int rows = 10;
-const int elements = 10;
+const int DIM = 10;
 int maxship = 10;
-int matrix[rows][elements];
+int matrix[DIM][DIM];
 
 void clear()
 {
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < DIM; i++)
 	{
 
-		for (int j = 0; j < elements; j++)
+		for (int j = 0; j < DIM; j++)
 		{
 			matrix[i][j] = 0;
 		}
@@ -26,10 +25,10 @@ void clear()
 
 void Show()
 {
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < DIM; i++)
 	{
 
-		for (int j = 0; j < elements; j++)
+		for (int j = 0; j < DIM; j++)
 		{
 			cout << matrix[i][j] << " ";
 		}
@@ -43,10 +42,10 @@ int NumberOfShips()
 {
 
 	int c = 0;
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < DIM; i++)
 	{
 
-		for (int j = 0; j < elements; j++)
+		for (int j = 0; j < DIM; j++)
 		{
 			if (matrix[i][j] == 1)
 				c++;
@@ -73,10 +72,11 @@ void SetShips()
 
 bool Attack(int x, int y)
 {
+	bool false;
 	if (matrix[x][y] == 1)
 	{
 		matrix[x][y] = 2;
-		return true;
+		false = true;
 	}
 	return false;
 }
